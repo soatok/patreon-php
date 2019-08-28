@@ -2,10 +2,10 @@
 
 [![Support on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.herokuapp.com%2Fsoatok&style=flat)](https://patreon.com/soatok)
 [![Linux Build Status](https://travis-ci.org/soatok/patreon-php.svg?branch=master)](https://travis-ci.org/soatok/patreon-php)
-[![Latest Stable Version](https://poser.pugx.org/soatok/patreon-php/v/stable)](https://packagist.org/packages/soatok/patreon-php)
-[![Latest Unstable Version](https://poser.pugx.org/soatok/patreon-php/v/unstable)](https://packagist.org/packages/soatok/patreon-php)
-[![License](https://poser.pugx.org/soatok/patreon-php/license)](https://packagist.org/packages/soatok/patreon-php)
-[![Downloads](https://img.shields.io/packagist/dt/soatok/patreon-php.svg)](https://packagist.org/packages/soatok/patreon-php)
+[![Latest Stable Version](https://poser.pugx.org/soatok/patreon-php/v/stable)](https://packagist.org/packages/soatok/patreon)
+[![Latest Unstable Version](https://poser.pugx.org/soatok/patreon-php/v/unstable)](https://packagist.org/packages/soatok/patreon)
+[![License](https://poser.pugx.org/soatok/patreon/license)](https://packagist.org/packages/soatok/patreon-php)
+[![Downloads](https://img.shields.io/packagist/dt/soatok/patreon.svg)](https://packagist.org/packages/soatok/patreon-php)
 
 This is Soatok's fork of the [Patreon-PHP](https://github.com/Patreon/patreon-php) library.
 
