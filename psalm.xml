@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <psalm
     totallyTyped="false"
-    resolveFromConfigFile="true"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
@@ -22,13 +21,8 @@
         <DeprecatedProperty errorLevel="info" />
         <DeprecatedClass errorLevel="info" />
         <DeprecatedConstant errorLevel="info" />
-        <DeprecatedFunction errorLevel="info" />
         <DeprecatedInterface errorLevel="info" />
         <DeprecatedTrait errorLevel="info" />
-
-        <InternalMethod errorLevel="info" />
-        <InternalProperty errorLevel="info" />
-        <InternalClass errorLevel="info" />
 
         <MissingClosureReturnType errorLevel="info" />
         <MissingReturnType errorLevel="info" />
