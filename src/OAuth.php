@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 namespace Patreon;
 
 use ParagonIE\HiddenString\HiddenString;
@@ -38,6 +39,7 @@ class OAuth
      * @param string $code
      * @param string $redirect_uri
      * @return array
+     * @throws CurlException
      */
     public function get_tokens(string $code, string $redirect_uri)
     {
@@ -53,6 +55,7 @@ class OAuth
     /**
      * @param string $refresh_token
      * @return array
+     * @throws CurlException
      */
     public function refresh_token(string $refresh_token)
     {

@@ -1,5 +1,6 @@
-# 1.0.0
+# 0.4.0
 
+* **Soatok's Fork of the Patreon Library Begins**
 * Increased minimum PHP version to 7.0 
 * Library moved to use Patreon API v2 endpoints and calls
 * Scopes added to examples and API url functions

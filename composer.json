@@ -1,11 +1,16 @@
 {
-    "name": "patreon/patreon",
+    "name": "soatok/patreon",
     "description": "Interact with the Patreon API via OAuth.",
-    "license": "MIT",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "Patreon",
             "email": "platform-team@patreon.com"
+        }
+        {
+            "name": "Soatok Dreamseeker",
+            "email": "soatok.dhole@gmail.com",
+            "homepage": "https://soatok.com"
         }
     ],
     "minimum-stability": "dev",

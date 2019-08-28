@@ -61,7 +61,7 @@ class AuthUrl
             'client_id' => $this->clientId
         ];
         if (!empty($this->state)) {
-            $pieces['state'] = $this->state;
+            $pieces['state'] = base64_encode(json_encode($this->state));
         }
         if (!empty($this->scopes)) {
             $pieces['scope'] = implode(' ', $this->scopes);

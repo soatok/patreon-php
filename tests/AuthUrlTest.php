@@ -19,7 +19,7 @@ class AuthUrlTest extends TestCase
             ->with('fursona', 'dhole');
 
         $this->assertSame(
-            'https://www.patreon.com/oauth2/authorize?response_type=code&client_id=exampleClientId&state%5Bsecret%5D=agent+man&state%5Bfursona%5D=dhole&scope=identity+identity%5Bemail%5D',
+            'https://www.patreon.com/oauth2/authorize?response_type=code&client_id=exampleClientId&state=eyJzZWNyZXQiOiJhZ2VudCBtYW4iLCJmdXJzb25hIjoiZGhvbGUifQ%3D%3D&scope=identity+identity%5Bemail%5D',
             (string) $full
         );
     }
