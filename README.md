@@ -4,8 +4,8 @@
 [![Linux Build Status](https://travis-ci.org/soatok/patreon-php.svg?branch=master)](https://travis-ci.org/soatok/patreon-php)
 [![Latest Stable Version](https://poser.pugx.org/soatok/patreon/v/stable)](https://packagist.org/packages/soatok/patreon)
 [![Latest Unstable Version](https://poser.pugx.org/soatok/patreon/v/unstable)](https://packagist.org/packages/soatok/patreon)
-[![License](https://poser.pugx.org/soatok/patreon/license)](https://packagist.org/packages/soatok/patreon-php)
-[![Downloads](https://img.shields.io/packagist/dt/soatok/patreon.svg)](https://packagist.org/packages/soatok/patreon-php)
+[![License](https://poser.pugx.org/soatok/patreon/license)](https://packagist.org/packages/soatok/patreon)
+[![Downloads](https://img.shields.io/packagist/dt/soatok/patreon.svg)](https://packagist.org/packages/soatok/patreon)
 
 This is Soatok's fork of the [Patreon-PHP](https://github.com/Patreon/patreon-php) library.
 
