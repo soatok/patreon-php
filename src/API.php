@@ -27,6 +27,13 @@ class API
     public $api_endpoint;
 
     /**
+     * Fallback base URL for non-standard API paths
+     *
+     * @var string $other_endpoint
+     */
+    public $other_endpoint;
+
+    /**
      * The cache for request results - an array that matches hash of the unique
      * API request to the returned result
      *
@@ -61,9 +68,17 @@ class API
         // Set API endpoint to use. Its currently V2
         $this->api_endpoint = "https://www.patreon.com/api/oauth2/v2/";
 
+        // The weird endpoint
+        $this->other_endpoint = "https://www.patreon.com/api/oauth2/api/";
+
         // Set default return format - this can be changed by the app using the lib by setting it
         // after initialization of this class
         $this->api_return_format = 'array';
+    }
+
+    public function current_user_campaigns(array $args = [])
+    {
+        return $this->get_data('current_user/campaigns', $args, true);
     }
 
     /**
@@ -194,15 +209,20 @@ class API
     /**
      * @param string $suffix
      * @param array $params
+     * @param bool $nonStandard
      * @return string|array|object
      * @throws APIException
      * @throws CurlException
      * @throws \SodiumException
      */
-    public function get_data(string $suffix, array $params = [])
+    public function get_data(string $suffix, array $params = [], bool $nonStandard = false)
     {
         // Construct request:
-        $api_request = $this->api_endpoint . $suffix;
+        if ($nonStandard) {
+            $api_request = $this->api_endpoint . $suffix;
+        } else {
+            $api_request = $this->other_endpoint . $suffix;
+        }
         if (!empty($params)) {
             $api_request .= '?' . http_build_query($params);
         }
