@@ -132,8 +132,7 @@ class API
                     'goals',
                     'tiers'
                 ])
-            ]
-        );
+            ]);
     }
 
     /**
@@ -289,14 +288,14 @@ class API
 
         // Set the cURL request method - works for all of them
 
-        curl_setopt( $ch, CURLOPT_CUSTOMREQUEST, $this->api_request_method );
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $this->api_request_method);
 
         // Below line is for dev purposes - remove before release
         // curl_setopt($ch, CURLOPT_HEADER, 1);
 
         $headers = array(
             'Authorization: Bearer ' . $this->access_token,
-            'User-Agent: Patreon-PHP, version 1.0.0, platform ' . php_uname('s') . '-' . php_uname( 'r' ),
+            'User-Agent: Patreon-PHP, version 1.0.0, platform ' . php_uname('s') . '-' . php_uname('r'),
         );
 
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
@@ -317,8 +316,8 @@ class API
     {
         // If the cache array is larger than 50, snip the first item.
         // This may be increased in future
-        if (!empty(self::$request_cache) && (count( self::$request_cache ) > 50)) {
-            array_shift( self::$request_cache );
+        if (!empty(self::$request_cache) && (count(self::$request_cache) > 50)) {
+            array_shift(self::$request_cache);
         }
 
         // Add the new request and return it
