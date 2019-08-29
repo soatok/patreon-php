@@ -218,9 +218,9 @@ class API
     {
         // Construct request:
         if ($nonStandard) {
-            $api_request = $this->api_endpoint . $suffix;
-        } else {
             $api_request = $this->other_endpoint . $suffix;
+        } else {
+            $api_request = $this->api_endpoint . $suffix;
         }
         if (!empty($params)) {
             $api_request .= '?' . http_build_query($params);
