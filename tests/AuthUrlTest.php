@@ -18,8 +18,10 @@ class AuthUrlTest extends TestCase
             ->withState(['secret' => 'agent man'])
             ->with('fursona', 'dhole');
 
+        // @codingStandardsIgnoreStart
         $this->assertSame(
             'https://www.patreon.com/oauth2/authorize?response_type=code&client_id=exampleClientId&state=eyJzZWNyZXQiOiJhZ2VudCBtYW4iLCJmdXJzb25hIjoiZGhvbGUifQ%3D%3D&scope=identity+identity%5Bemail%5D',
+            // @codingStandardsIgnoreEnd
             (string) $full
         );
     }
