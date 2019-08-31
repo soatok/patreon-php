@@ -9,7 +9,7 @@
 
 This is Soatok's fork of the [Patreon-PHP](https://github.com/Patreon/patreon-php) library.
 
-Interact with the Patreon API via OAuth. **Requires PHP 7.**
+Interact with the Patreon API (version 2) via OAuth. **Requires PHP 7.**
 
 ## Installation
 
@@ -32,14 +32,19 @@ This will provide you with a `client_id` and a `client_secret`.
 
 Let's say you wanted to make a "Log In with Patreon" button.
 
-You've read through [the directions](https://www.patreon.com/platform/documentation/oauth), and are trying to implement "Step 2: Handling the OAuth Redirect" with your server.
+You've read through [the directions](https://www.patreon.com/platform/documentation/oauth), 
+and are trying to implement "Step 2: Handling the OAuth Redirect" with your server.
 
-The user will be arriving at one of your pages *after* you have sent them to [the authorize page] (www.patreon.com/oauth2/authorize) for step 1, so in their query parameters landing on this page, they will have a parameter `'code'`.
+The user will be arriving at one of your pages *after* you have sent them to 
+[the authorize page](https://www.patreon.com/oauth2/authorize) for step 1, so in their query
+parameters landing on this page, they will have a parameter `'code'`.
 
-_(If you are doing something other than the "Log In with Patreon" flow, please see [the examples folder](examples) for more examples)_
+_(If you are doing something other than the "Log In with Patreon" flow, please see
+[the examples folder](examples) for more examples.)_
 
-_(Especially the unified flow is a great way to have users unlock locked features or content at your site or app - it allows users to register, login, pledge and return to your app in one smooth unified flow. Check it out in [the examples folder](examples) )_
-
+_(Especially the unified flow is a great way to have users unlock locked features or content
+at your site or app - it allows users to register, login, pledge and return to your app in
+one smooth unified flow. Check it out in [the examples folder](examples).)_
 
 ```php
 <?php

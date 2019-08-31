@@ -76,6 +76,16 @@ class API
         $this->api_return_format = 'array';
     }
 
+    /**
+     * Uses the non-standard API endpoint to get information about the campaigns
+     * belonging to the current authenticated user (defined by the access token).
+     *
+     * @param array $args
+     * @return array|object|string
+     * @throws APIException
+     * @throws CurlException
+     * @throws \SodiumException
+     */
     public function current_user_campaigns(array $args = [])
     {
         return $this->get_data('current_user/campaigns', $args, true);

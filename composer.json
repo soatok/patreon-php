@@ -35,7 +35,7 @@
         }
     },
     "scripts": {
-        "test": [ "phpunit", "phpcs" ],
+        "test": [ "phpunit", "psalm", "phpcs" ],
         "lint": [ "phpcbf", "phpcs" ]
     }
 }

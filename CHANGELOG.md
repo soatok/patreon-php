@@ -1,3 +1,9 @@
+# 0.5.0
+
+* Added `current_user_campaigns()` method to the API class, as per the API documentation.
+* [#1](https://github.com/soatok/patreon-php/pull/1): Tweaks for stability, code coverage,
+  and PSR standardization (Thanks [@foxworth42](https://github.com/foxworth42)!)
+
 # 0.4.0
 
 * **Soatok's Fork of the Patreon Library Begins**
