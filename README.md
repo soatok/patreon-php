@@ -11,6 +11,19 @@ This is Soatok's fork of the [Patreon-PHP](https://github.com/Patreon/patreon-ph
 
 Interact with the Patreon API (version 2) via OAuth. **Requires PHP 7.**
 
+## Differences Between This Library and Patreon's
+
+* This library requires PHP 7 or newer, Patreon's only requires PHP 5.3.
+* This library loads in the [hidden-string](https://github.com/paragonie/hidden-string)
+  package (which prevents secrets from leaking in stack traces) and the 
+  [sodium_compat](https://github.com/paragonie/sodium_compat) package (used to
+  make sure if libsodium is available-- even in a weird way-- it will be accessible
+  in the standardized PHP 7.2+ API).
+* This library uses BLAKE2b for response caching instead of MD5 (if possible).
+* This library features the new `Patreon\AuthUrl` class which generates an authentication
+  URL without having to manually URL-encode and concatenate strings.
+  * This should make it even easier for PHP developers to integrate with Patreon via OAuth.
+
 ## Installation
 
 Get the plugin from [Packagist](https://packagist.org/packages/soatok/patreon):
@@ -18,6 +31,11 @@ Get the plugin from [Packagist](https://packagist.org/packages/soatok/patreon):
 ```terminal
 composer require soatok/patreon-php
 ```
+
+Although it's possible to load this library without using Composer,
+[it's highly recommended that you use Composer](https://paragonie.com/blog/2017/12/2018-guide-building-secure-php-software#dependency-management).
+
+Soatok will not support non-Composer installs.
 
 ## Usage
 
