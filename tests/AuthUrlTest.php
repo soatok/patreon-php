@@ -20,7 +20,7 @@ class AuthUrlTest extends TestCase
 
         // @codingStandardsIgnoreStart
         $this->assertSame(
-            'https://www.patreon.com/oauth2/authorize?response_type=code&client_id=exampleClientId&state=eyJzZWNyZXQiOiJhZ2VudCBtYW4iLCJmdXJzb25hIjoiZGhvbGUifQ%3D%3D&scope=identity+identity%5Bemail%5D',
+            'https://www.patreon.com/oauth2/authorize?response_type=code&client_id=exampleClientId&redirect_uri=http%3A%2F%2Flocalhost&state=eyJzZWNyZXQiOiJhZ2VudCBtYW4iLCJmdXJzb25hIjoiZGhvbGUifQ%3D%3D&scope=identity+identity%5Bemail%5D',
             // @codingStandardsIgnoreEnd
             (string) $full
         );
