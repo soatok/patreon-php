@@ -1,3 +1,7 @@
+# 0.6.0
+
+* [#2](https://github.com/soatok/patreon-php/pull/2): Add Redirect URI to Auth URL 
+
 # 0.5.0
 
 * Added `current_user_campaigns()` method to the API class, as per the API documentation.
