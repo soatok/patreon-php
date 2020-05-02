@@ -60,6 +60,9 @@ class AuthUrl
             'response_type' => 'code',
             'client_id' => $this->clientId
         ];
+        if (!empty($this->redirectUri)) {
+            $pieces['redirect_uri'] = $this->redirectUri;
+        }
         if (!empty($this->state)) {
             $pieces['state'] = base64_encode(json_encode($this->state));
         }
