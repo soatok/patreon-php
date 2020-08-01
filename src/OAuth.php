@@ -2,6 +2,7 @@
 declare(strict_types=1);
 namespace Patreon;
 
+use ParagonIE\Certainty\RemoteFetch;
 use ParagonIE\HiddenString\HiddenString;
 use Patreon\Exceptions\CurlException;
 
@@ -17,13 +18,16 @@ class OAuth
     /** @var HiddenString $client_secret */
     private $client_secret;
 
+    /** @var string $caCertDir */
+    protected $caCertDir;
+
     /**
      * OAuth constructor.
      *
      * @param string|HiddenString $client_id
      * @param string|HiddenString $client_secret
      */
-    public function __construct($client_id, $client_secret)
+    public function __construct($client_id, $client_secret, $cacert_dir = '')
     {
         if (!($client_id instanceof HiddenString)) {
             $client_id = new HiddenString($client_id);
@@ -33,6 +37,27 @@ class OAuth
         }
         $this->client_id = $client_id;
         $this->client_secret = $client_secret;
+        if (!empty($cacert_dir)) {
+            $this->caCertDir = $cacert_dir;
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function getCaBundleDir(): string
+    {
+        return $this->caCertDir;
+    }
+
+    /**
+     * @param string $path
+     * @return self
+     */
+    public function setCaBundleDir(string $path): self
+    {
+        $this->caCertDir = $path;
+        return $this;
     }
 
     /**
@@ -84,12 +109,30 @@ class OAuth
 
         // Strict TLS verification
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+        if (!defined('CURLOPT_SSL_VERIFYPEER')) {
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+        }
+        curl_setopt($ch, CURLE_SSL_CACERT, $this->getLatestCaCerts());
+
         $response = curl_exec($ch);
         if (!is_string($response)) {
             throw new CurlException('No response returned from Patreon server');
         }
 
         return (array) json_decode($response, true);
+    }
+
+    /**
+     * Can be overridden in derived classes.
+     *
+     * @return string
+     * @throws \ParagonIE\Certainty\Exception\CertaintyException
+     * @throws \SodiumException
+     */
+    public function getLatestCaCerts(): string
+    {
+        return (new RemoteFetch($this->caCertDir))
+            ->getLatestBundle()
+            ->getFilePath();
     }
 }

@@ -23,4 +23,15 @@ class OAuthTest extends TestCase
             new OAuth(new HiddenString('a'), new HiddenString('b'))
         );
     }
+
+    public function testCaCertBundlePersist()
+    {
+        $path = realpath(__DIR__ . '/certs');
+        $oa = new OAuth(new HiddenString('a'), new HiddenString('b'), $path);
+        $file = $oa->getLatestCaCerts();
+        $this->assertSame(
+            $path,
+            realpath(dirname($file))
+        );
+    }
 }
