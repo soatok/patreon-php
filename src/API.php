@@ -325,7 +325,7 @@ class API
 
         $headers = array(
             'Authorization: Bearer ' . $this->access_token,
-            'User-Agent: Patreon-PHP, version 1.0.0, platform ' . php_uname('s') . '-' . php_uname('r'),
+            'User-Agent: Patreon-PHP, version 1.0.2, platform ' . php_uname('s') . '-' . php_uname('r'),
         );
 
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
