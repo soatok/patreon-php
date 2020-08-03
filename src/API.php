@@ -151,13 +151,13 @@ class API
     public function fetch_campaign_details($campaign_id)
     {
         return $this->get_data('campaigns/' . $campaign_id, [
-                'include' => implode(',', [
-                    'benefits',
-                    'creator',
-                    'goals',
-                    'tiers'
-                ])
-            ]);
+            'include' => implode(',', [
+                'benefits',
+                'creator',
+                'goals',
+                'tiers'
+            ])
+        ]);
     }
 
     /**

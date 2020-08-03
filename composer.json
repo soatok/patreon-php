@@ -24,6 +24,7 @@
     },
     "require": {
         "php": ">=7.0.0",
+        "paragonie/certainty": "^2",
         "paragonie/hidden-string": "^1",
         "paragonie/sodium_compat": "^1",
         "ext-curl": "*",
