@@ -29,7 +29,7 @@ Interact with the Patreon API (version 2) via OAuth. **Requires PHP 7.**
 Get the plugin from [Packagist](https://packagist.org/packages/soatok/patreon):
 
 ```terminal
-composer require soatok/patreon-php
+composer require soatok/patreon
 ```
 
 Although it's possible to load this library without using Composer,
