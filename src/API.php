@@ -238,9 +238,9 @@ class API
 
         // This identifies a unique request
         if (extension_loaded('sodium')) {
-            $api_request_hash = bin2hex(sodium_crypto_generichash($api_request));
+            $api_request_hash = bin2hex(sodium_crypto_generichash($api_request . $this->access_token));
         } else {
-            $api_request_hash = md5($api_request);
+            $api_request_hash = md5($api_request . $this->access_token);
         }
 
         // Check if this request exists in the cache and if so, return it directly -
